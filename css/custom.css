@@ -1,0 +1,41 @@
+.profile {
+  text-align: center;
+}
+
+
+img.pfp {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.project-heading {
+    font-weight: bold;
+}
+
+.grid {
+    margin-bottom: 1rem;
+}
+
+.grid > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 300px;
+}
+
+.grid img {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}
+
+
+.grid video {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}

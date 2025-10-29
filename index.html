@@ -4,27 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Abhijay Saini's website">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Abhijay Saini">
+    <link rel="stylesheet" href="css/pico.min.css">
+    <link rel="stylesheet" href="css/custom.css">
     <title>Abhijay Saini</title>
-    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <h1>ABHIJAY SAINI</h1>
-    <div id="sections">
-        <div id="about-section" class="section">
-            <div class="section-title">About Me</div>
-            <p>Hi this is my website!</p>
-            <img src="https://avatars.githubusercontent.com/u/22242257?v=4" alt="my picture" width="50px" height="50px">
+    <main class="container">
+        <div class="profile">
+            <img class="pfp" src="img/profile.jpeg"/>
+            <p></p>
+
+            <h5>Abhijay Saini</h5>
+            
+            <p>
+                <a href="https://www.linkedin.com/in/abhijaysaini/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/AbhijayS" target="_blank">GitHub</a>
+                <a href="https://x.com/AbhijaySaini" target="_blank">X</a>
+
+            </p>
         </div>
-        <div id="blog-section" class="section">
-            <div class="section-title">Blog</div>
-            <p>I like to write stuff here </p>
+
+        <p>
+            Hi 👋 Welcome to my nook. My name is Abhijay.
+        </p>
+
+        <p>
+            I was born in India and moved to the US in 2015 with my parents. I live in Austin now.
+        </p>
+        <p>
+            My greatest quality is that I like asking “WHY” questions.
+            I’ve done that ever since I was a little kid.
+            I like getting to the bottom of things.
+        </p>
+        <p>
+            Once I disovered Khan Academy at the age of 12, I became obsessed with learning math and physics by watching Sal's explanations, thinking from <a href="https://en.wikipedia.org/wiki/First_principle">first principles</a>, and solving problems.
+            I also taught myself to code through their self-paced JavaScript exercises. I haven’t stopped programming since then.
+        </p>
+
+        <p>
+            Here’s a tour of some things I’ve done…
+        </p>
+
+        <h5>FIRST Robotics</h5>
+        <p>
+            In high school, I discovered FIRST robotics, which I dedicated my life to through all 4 years, obsessively, and made it to the World Championships twice. FIRST is a microcosm of the technology industry, marrying every discipline of applied engineering into a competitive brain-sport. It proved to me that I can learn and build anything I put my mind to, a lifelong growth mindset that I’m extremely grateful for. Nowadays, I share the <a href="https://www.youtube.com/watch?v=afdtJ99CGOI" target="_blank">joy of engineering</a> by mentoring kids on FIRST Teams.
+        </p>
+
+        <div class="grid">
+            <div>
+                <img src="img/2018.jpeg" alt="Houston World Championship 2018" loading="lazy">
+            </div>
+
+            <div>
+                <img src="img/mentoring.jpeg" alt="Mentoring" loading="lazy">
+            </div>
         </div>
-        <div id="projects-section" class="section">
-            <div class="section-title">Projects</div>
-            <a href="https://github.com/AbhijayS">Visit my GitHub to see all of my projects!</a>
+        
+        <h5>EasyOdometry</h5>
+        <p>
+            <a href="https://gm0.org/en/latest/docs/software/concepts/odometry.html" target="_blank">Odometry</a> is a means of estimating the robot’s position on the field. There are many such methods, but dead-wheels on holonomic drivetrains are the gold standard in FIRST robotics. We simplified the three-pod odometry design into a single plug-and-play module for accurate navigation and ease-of-use. This module is the first of its kind caster-wheel odometry sensor that tracks the robot’s movements. A differential is used to extract the distance increments from the wheel and angle from the pivot axis, which are combined with an imu to compute the robot’s overall 2D Pose.
+        </p>
+
+        <div class="grid">
+            <div>
+                <video width="640" height="360" controls autoplay loop muted>
+                    <source src="img/timelapse.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div>
+                <video width="640" height="360" controls autoplay loop muted>
+                    <source src="img/odo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div>
+                <img src="img/pcb.png" alt="EasyOdometry PCB" loading="lazy">
+            </div>
         </div>
-    </div>
+        
+        <h5>Dog Collar</h5>
+        <p>
+            I worked for a <a href="https://www.instagram.com/shazampet/?hl=en" target="_blank">small startup</a> developing an AI Dog Collar that would respond to the owner’s commands in the pet’s voice. Inside the main body of the band, there was a custom-designed PCB with ESP32-C6 and STM32 microprocessors, sensors, speakers, battery monitor, and debugging peripherals. The device recorded sounds from the pet’s environment through a MEMS microphone into a PSRAM buffer, passed it through a low-pass filter with Automatic Gain Control, and transferred the 8-bit audio from the STM32 to ESP32 through the 40MHz SPI interface, which uploaded it to the cloud over a TCP socket connection. We redefined the WIFI drivers in the Zephyr RTOS library to send AT-commands to the ESP32. The hardest part about the project was keeping the power consumption low while time-sharing between WIFI and BLE operations. We were able to extend the tiny battery life to multiple days.
+        </p>
+        
+        <div class="grid">
+            <div>
+                <img src="img/pet.jpg" alt="A pet wearing the AI Collar">
+            </div>
+
+            <div>
+                <img src="img/debugging.jpg" alt="Debugging the PCB">
+            </div>
+
+            <div>
+                <img src="img/desk.jpg" alt="My development setup">
+            </div>
+        </div>
+        
+        <!-- <p class="project-heading">IoT Drone</p> -->
+        <h5>IoT Drone</h5>
+        <p>
+            For the capstone project of our Embedded Systems Lab taught by Jonathan Valvano, we built a wifi-controlled drone from the ground up, complete with a custom PCB containing ESCs, flight controller, ESP8266 Wifi Module, and TM4C Microcontroller. This project was the ultimate test of our understanding of embedded systems which integrated concepts including PWM Timers for motor control, DMA controller for RGB lights and Audio, and PID control loops for flight control. After all-nighters and head-scratching, the project became a huge success at the final showcase (turns out that drones aren’t allowed in the engineering building after all but they were too late to catch us!).
+        </p>
+        <div class="grid">
+            <div>
+                <img src="img/photo-op.png" alt="Photo-op at the final demo day">
+            </div>
+
+            <div>
+                <img src="img/drone.jpg" alt="Drone in action">
+            </div>
+        </div>
+    </main>
 </body>
 </html>
